@@ -5,7 +5,39 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int n = 0;
+    bool a, b, c, d, e;
+    do {
+        
+        do {
+            std::cout << "请输入正整数n(1000<n<9999)" << std::endl;
+            std::cout << "n=";
+            std::cin >> n;
+
+
+
+            if (n <= 1000 || n >= 9999)
+            {
+                std::cout << "n的值不在给定范围之内，请重新输入！" << std::endl;
+                n = 0;
+            }
+
+
+        } while (n == 0);
+        a = (n % 7 == 0);
+        b = (n % 10 ==7);
+        c = (n % 100 / 10==7);
+        d =( n % 1000 / 100 ==7);
+        e = n / 1000 % 7 ==7;
+        if (a || b  ||  c || d || e  )
+        {
+            std::cout << "yes" << std::endl;
+        }
+        else
+        {
+            std::cout << "no" << std::endl;
+        }
+    } while (true);
     system("PAUSE");
 }
 
